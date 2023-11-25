@@ -69,5 +69,14 @@ namespace MagicVilla_API.Repository
         {
             await _db.SaveChangesAsync();
         }
+
+        public async Task<T> GetAsyncSP(int id)
+        {
+            //IQueryable<T> query = dbSet.FromSqlInterpolated($"CALL [dbo].[MagicVillaApiVilla] @OPERATION_ID=1,@Id={id}");
+            var query = await dbSet.FromSqlInterpolated($"Exec [dbo].[MagicVillaApiVilla] @OPERATION_ID=1,@Id={id}").ToListAsync();
+
+            return query.FirstOrDefault();
+        }
+
     }
 }

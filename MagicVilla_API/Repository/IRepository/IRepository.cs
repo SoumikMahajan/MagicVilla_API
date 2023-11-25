@@ -9,5 +9,6 @@ namespace MagicVilla_API.Repository.IRepository
         Task CreateAsync(T entity);
         Task RemoveAsync(T entity);
         Task SaveAsync();
+        Task<T> GetAsyncSP(int id);
     }
 }

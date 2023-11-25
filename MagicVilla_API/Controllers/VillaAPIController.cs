@@ -96,6 +96,93 @@ namespace MagicVilla_API.Controllers
             return _response;
         }
 
+        //[HttpGet("{id:int}", Name = "GetVillaForSP")]
+        //[ProducesResponseType(StatusCodes.Status403Forbidden)]
+        //[ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
+        //public async Task<ActionResult<APIResponse>> GetVillaForSP(int id)
+        //{
+        //    try
+        //    {
+        //        if (id == 0)
+        //        {
+        //            _response.StatusCode = HttpStatusCode.BadRequest;
+        //            return BadRequest(_response);
+        //        }
+        //        //var villa = await _db.Villas.FirstOrDefaultAsync(u => u.Id == id);
+
+        //        var villa = await _dbVilla.GetAsyncSP(id);
+        //        if (villa == null)
+        //        {
+        //            _response.StatusCode = HttpStatusCode.NotFound;
+        //            return NotFound(_response);
+        //        }
+        //        _response.Result = _mapper.Map<VillaDTO>(villa);
+        //        _response.StatusCode = HttpStatusCode.OK;
+        //        return Ok(_response);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _response.IsSuccess = false;
+        //        _response.ErrorMessages = new List<string>() { ex.ToString() };
+        //    }
+        //    return _response;
+        //}
+
+        //[HttpPost]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //public async Task<ActionResult<APIResponse>> CreateVillaSP([FromBody] VillaCreateDTO createDTO)
+        //{
+        //    //if (ModelState.IsValid) {
+        //    //    return BadRequest(ModelState);
+        //    //}
+        //    try
+        //    {
+        //        if (await _dbVilla.GetAsync(u => u.Name.ToLower() == createDTO.Name.ToLower()) != null)
+        //        {
+        //            ModelState.AddModelError("ErrorMessages", "Villa already Exists");
+        //            return BadRequest(ModelState);
+        //        }
+        //        if (createDTO == null)
+        //        {
+        //            return BadRequest(createDTO);
+        //        }
+        //        Villa model = _mapper.Map<Villa>(createDTO);
+
+        //        //Villa model = new()
+        //        //{
+        //        //    Amenity = createDTO.Amenity,
+        //        //    Details = createDTO.Details,
+        //        //    ImageUrl = createDTO.ImageUrl,
+        //        //    Name = createDTO.Name,
+        //        //    Occupancy = createDTO.Occupancy,
+        //        //    Rate = createDTO.Rate,
+        //        //    Sqft = createDTO.Sqft
+        //        //};
+
+        //        //await _db.Villas.AddAsync(model);
+        //        //await _db.SaveChangesAsync();
+
+        //        var villa = _dbVilla.CreateAsyncSP(createDTO);
+        //        _response.Result = _mapper.Map<VillaCreateDTO>(villa);
+        //        _response.StatusCode = HttpStatusCode.Created;
+
+        //        return CreatedAtRoute("GetVilla", new { id = model.Id }, _response);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _response.IsSuccess = false;
+        //        _response.ErrorMessages = new List<string>() { ex.ToString() };
+        //    }
+        //    return _response;
+
+
+        //}
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
